@@ -34,8 +34,8 @@ align-items:center;
 padding:50px 20px;
 text-align:center;
 position: relative;
-transition: background 5s ease; /* Smooth background change */
-background: linear-gradient(120deg, #ffafbd, #ffc3a0); /* Initial gradient */
+transition: background 5s ease; /* smooth gradient transition */
+background: linear-gradient(120deg, #ffafbd, #ffc3a0);
 }
 
 /* ---------------- HERO ---------------- */
@@ -48,7 +48,8 @@ font-size:70px;
 .hero h2{
 margin-top:10px;
 font-weight:300;
-color:#ccc;
+color:#ffc0cb;
+transition: color 5s ease;
 }
 
 /* ---------------- MUSIC BUTTON ---------------- */
@@ -135,14 +136,14 @@ section p{
 font-family: 'Poppins', sans-serif; /* Different font for explanations */
 font-weight: 300;
 font-size: 20px;
-color: #ffc0cb; /* initial love-vibe color */
-transition: color 2s ease; /* smooth color change */
+color: #ffe4e1; /* soft pastel pink */
+transition: color 5s ease; /* smooth color change */
 max-width: 800px;
 margin: 10px auto;
 }
 
 section h1, section h2, .title{
-transition: color 5s ease; /* headings color transition too */
+transition: color 5s ease; /* smooth heading color change */
 }
 
 </style>
@@ -271,36 +272,40 @@ document.body.appendChild(petal);
 setTimeout(()=>petal.remove(),10000);
 },500);
 
-/* ---------------- GRADUAL BACKGROUND & TEXT COLOR CHANGE ---------------- */
+/* ---------------- SMOOTH BACKGROUND & TEXT COLOR CHANGE ---------------- */
 const sections = document.querySelectorAll("section");
-const colors = [
-  {bg: "linear-gradient(120deg, #ffafbd, #ffc3a0)", text: "#fff0f5"},
-  {bg: "linear-gradient(120deg, #a18cd1, #fbc2eb)", text: "#ffe4e1"},
-  {bg: "linear-gradient(120deg, #fbc2eb, #fad0c4)", text: "#fff0f5"},
-  {bg: "linear-gradient(120deg, #ffecd2, #fcb69f)", text: "#fffaf0"},
-  {bg: "linear-gradient(120deg, #f6d365, #fda085)", text: "#fff0f5"}
+const gradients = [
+  {bg:"linear-gradient(120deg, #ffafbd, #ffc3a0)", text:"#ffe4e1"},
+  {bg:"linear-gradient(120deg, #a18cd1, #fbc2eb)", text:"#fff0f5"},
+  {bg:"linear-gradient(120deg, #fbc2eb, #fad0c4)", text:"#ffe4e1"},
+  {bg:"linear-gradient(120deg, #ffecd2, #fcb69f)", text:"#fffaf0"},
+  {bg:"linear-gradient(120deg, #f6d365, #fda085)", text:"#fff0f5"}
 ];
 
-let sectionIndex = 0;
+let idx = 0;
 
 setInterval(()=>{
-  sectionIndex = (sectionIndex + 1) % sections.length;
-  const sec = sections[sectionIndex];
-  const colorSet = colors[Math.floor(Math.random()*colors.length)];
-  
-  sec.style.background = colorSet.bg;
+  idx = (idx+1) % sections.length;
+  const sec = sections[idx];
+  const grad = gradients[Math.floor(Math.random()*gradients.length)];
 
-  const paragraphs = sec.querySelectorAll("p");
-  paragraphs.forEach(p=>{
-    p.style.color = colorSet.text;
+  // smooth background
+  sec.style.transition = "background 5s ease";
+  sec.style.background = grad.bg;
+
+  // smooth paragraph colors
+  const ps = sec.querySelectorAll("p");
+  ps.forEach(p=>{
+    p.style.color = grad.text;
   });
 
-  const headings = sec.querySelectorAll("h1, h2, .title");
-  headings.forEach(h=>{
-    h.style.color = colorSet.text;
+  // smooth heading colors
+  const hs = sec.querySelectorAll("h1,h2,.title");
+  hs.forEach(h=>{
+    h.style.color = grad.text;
   });
 
-}, 7000); // Change every 7 seconds smoothly
+}, 7000);
 
 </script>
 
