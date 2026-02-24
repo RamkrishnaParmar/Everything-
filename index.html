@@ -33,6 +33,9 @@ justify-content:center;
 align-items:center;
 padding:50px 20px;
 text-align:center;
+position: relative;
+transition: background 5s ease; /* Smooth background change */
+background: linear-gradient(120deg, #ffafbd, #ffc3a0); /* Initial gradient */
 }
 
 /* ---------------- HERO ---------------- */
@@ -47,6 +50,8 @@ margin-top:10px;
 font-weight:300;
 color:#ccc;
 }
+
+/* ---------------- MUSIC BUTTON ---------------- */
 
 #musicBtn{
 margin-top:30px;
@@ -69,6 +74,7 @@ transform:scale(1.1);
 font-family:'Great Vibes',cursive;
 font-size:55px;
 margin-bottom:20px;
+transition: color 5s ease;
 }
 
 /* ---------------- IMAGE STYLE ---------------- */
@@ -123,13 +129,28 @@ from{transform:translateY(-100px);}
 to{transform:translateY(100vh);}
 }
 
+/* ---------------- PARAGRAPH FONT & COLOR ---------------- */
+
+section p{
+font-family: 'Poppins', sans-serif; /* Different font for explanations */
+font-weight: 300;
+font-size: 20px;
+color: #ffc0cb; /* initial love-vibe color */
+transition: color 2s ease; /* smooth color change */
+max-width: 800px;
+margin: 10px auto;
+}
+
+section h1, section h2, .title{
+transition: color 5s ease; /* headings color transition too */
+}
+
 </style>
 </head>
 <body>
 
 <!-- ================= MUSIC SECTION ================= -->
 
-<!-- 👇 SONG FILE PATH - change only if name different -->
 <audio id="bgMusic" loop>
 <source src="music/appa-fer-milage.mp3" type="audio/mp3">
 </audio>
@@ -148,14 +169,10 @@ to{transform:translateY(100vh);}
 
 <p><b>27 Aug 2025 – 1:20 PM</b><br>R.K Cafe. Silent girl. No first words. But everything started.</p>
 
-<!-- 👇 PUT FIRST MEET IMAGE HERE -->
-<!-- File Name: 01-first-meet.jpg -->
 <img src="images/01-first-meet.jpg">
 
 <p><b>25 Jan 2026 – 5:28 PM</b><br>First Selfie Together.</p>
 
-<!-- 👇 PUT FIRST SELFIE IMAGE HERE -->
-<!-- File Name: 02-first-selfie.jpg -->
 <img src="images/02-first-selfie.jpg">
 
 </section>
@@ -167,26 +184,18 @@ to{transform:translateY(100vh);}
 
 <p><b>10 Jan 2026 – 4:44 PM</b><br>Pani Puri moment.</p>
 
-<!-- 👇 PANI PURI IMAGE -->
-<!-- File Name: 03-pani-puri.jpg -->
 <img src="images/03-pani-puri.jpg">
 
 <p><b>10 Jan 2026 – 8:43 PM</b><br>Best Call Ever.</p>
 
-<!-- 👇 CALL MEMORY IMAGE -->
-<!-- File Name: 04-call-memory.jpg -->
 <img src="images/04-call-memory.jpg">
 
 <p><b>25 Jan 2026 – Monty Cafe</b></p>
 
-<!-- 👇 MONTY CAFE IMAGE -->
-<!-- File Name: 05-monty-cafe.jpg -->
 <img src="images/05-monty-cafe.jpg">
 
 <p><b>20 Feb 2026 – Teliya Hanuman Mandir</b></p>
 
-<!-- 👇 MANDIR IMAGE -->
-<!-- File Name: 06-mandir.jpg -->
 <img src="images/06-mandir.jpg">
 
 </section>
@@ -199,8 +208,6 @@ to{transform:translateY(100vh);}
 <p>But for me… She is my everything.</p>
 <p>Daily talks. Daily smiles. Daily peace.</p>
 
-<!-- 👇 OPTIONAL EMOTIONAL IMAGE -->
-<!-- File Name: 07-emotional.jpg -->
 <img src="images/07-emotional.jpg">
 
 </section>
@@ -263,6 +270,37 @@ petal.style.animationDuration=5+Math.random()*5+"s";
 document.body.appendChild(petal);
 setTimeout(()=>petal.remove(),10000);
 },500);
+
+/* ---------------- GRADUAL BACKGROUND & TEXT COLOR CHANGE ---------------- */
+const sections = document.querySelectorAll("section");
+const colors = [
+  {bg: "linear-gradient(120deg, #ffafbd, #ffc3a0)", text: "#fff0f5"},
+  {bg: "linear-gradient(120deg, #a18cd1, #fbc2eb)", text: "#ffe4e1"},
+  {bg: "linear-gradient(120deg, #fbc2eb, #fad0c4)", text: "#fff0f5"},
+  {bg: "linear-gradient(120deg, #ffecd2, #fcb69f)", text: "#fffaf0"},
+  {bg: "linear-gradient(120deg, #f6d365, #fda085)", text: "#fff0f5"}
+];
+
+let sectionIndex = 0;
+
+setInterval(()=>{
+  sectionIndex = (sectionIndex + 1) % sections.length;
+  const sec = sections[sectionIndex];
+  const colorSet = colors[Math.floor(Math.random()*colors.length)];
+  
+  sec.style.background = colorSet.bg;
+
+  const paragraphs = sec.querySelectorAll("p");
+  paragraphs.forEach(p=>{
+    p.style.color = colorSet.text;
+  });
+
+  const headings = sec.querySelectorAll("h1, h2, .title");
+  headings.forEach(h=>{
+    h.style.color = colorSet.text;
+  });
+
+}, 7000); // Change every 7 seconds smoothly
 
 </script>
 
