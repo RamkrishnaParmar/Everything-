@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Janvi 🖤</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------------- GLOBAL ---------------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:50px 20px;
+text-align:center;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+}
+
+.hero h2{
+margin-top:10px;
+font-weight:300;
+color:#ccc;
+}
+
+#musicBtn{
+margin-top:30px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:black;
+cursor:pointer;
+transition:0.3s;
+}
+
+#musicBtn:hover{
+transform:scale(1.1);
+}
+
+/* ---------------- TITLES ---------------- */
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+margin-bottom:20px;
+}
+
+/* ---------------- IMAGE STYLE ---------------- */
+
+img{
+width:280px;
+border-radius:20px;
+margin:20px;
+transition:0.5s;
+}
+
+img:hover{
+transform:scale(1.05);
+}
+
+/* ---------------- LOVE COUNTER ---------------- */
+
+.counter{
+margin-top:20px;
+color:#aaa;
+}
+
+/* ---------------- SECRET ---------------- */
+
+.secret-btn{
+margin-top:40px;
+padding:10px 20px;
+border:1px solid white;
+border-radius:25px;
+cursor:pointer;
+}
+
+.secret-btn:hover{
+background:white;
+color:black;
+}
+
+/* ---------------- FLOATING ROSE ---------------- */
+
+.petal{
+position:fixed;
+width:15px;
+height:15px;
+background:white;
+opacity:0.2;
+border-radius:50%;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{transform:translateY(-100px);}
+to{transform:translateY(100vh);}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= MUSIC SECTION ================= -->
+
+<!-- 👇 SONG FILE PATH - change only if name different -->
+<audio id="bgMusic" loop>
+<source src="music/appa-fer-milage.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+<h1>Janvi Parmar</h1>
+<h2>My Optimus 🖤 My Chipkali</h2>
+<button id="musicBtn">Play Our Song 🎵</button>
+<div class="counter" id="loveCounter"></div>
+</section>
+
+<!-- ================= OUR BEGINNING ================= -->
+
+<section>
+<h1 class="title">Our Beginning</h1>
+
+<p><b>27 Aug 2025 – 1:20 PM</b><br>R.K Cafe. Silent girl. No first words. But everything started.</p>
+
+<!-- 👇 PUT FIRST MEET IMAGE HERE -->
+<!-- File Name: 01-first-meet.jpg -->
+<img src="images/01-first-meet.jpg">
+
+<p><b>25 Jan 2026 – 5:28 PM</b><br>First Selfie Together.</p>
+
+<!-- 👇 PUT FIRST SELFIE IMAGE HERE -->
+<!-- File Name: 02-first-selfie.jpg -->
+<img src="images/02-first-selfie.jpg">
+
+</section>
+
+<!-- ================= MEMORIES ================= -->
+
+<section>
+<h1 class="title">Beautiful Memories</h1>
+
+<p><b>10 Jan 2026 – 4:44 PM</b><br>Pani Puri moment.</p>
+
+<!-- 👇 PANI PURI IMAGE -->
+<!-- File Name: 03-pani-puri.jpg -->
+<img src="images/03-pani-puri.jpg">
+
+<p><b>10 Jan 2026 – 8:43 PM</b><br>Best Call Ever.</p>
+
+<!-- 👇 CALL MEMORY IMAGE -->
+<!-- File Name: 04-call-memory.jpg -->
+<img src="images/04-call-memory.jpg">
+
+<p><b>25 Jan 2026 – Monty Cafe</b></p>
+
+<!-- 👇 MONTY CAFE IMAGE -->
+<!-- File Name: 05-monty-cafe.jpg -->
+<img src="images/05-monty-cafe.jpg">
+
+<p><b>20 Feb 2026 – Teliya Hanuman Mandir</b></p>
+
+<!-- 👇 MANDIR IMAGE -->
+<!-- File Name: 06-mandir.jpg -->
+<img src="images/06-mandir.jpg">
+
+</section>
+
+<!-- ================= PRESENT ================= -->
+
+<section>
+<h1 class="title">Present</h1>
+<p>Currently: Best Friends (from her side 🌚)</p>
+<p>But for me… She is my everything.</p>
+<p>Daily talks. Daily smiles. Daily peace.</p>
+
+<!-- 👇 OPTIONAL EMOTIONAL IMAGE -->
+<!-- File Name: 07-emotional.jpg -->
+<img src="images/07-emotional.jpg">
+
+</section>
+
+<!-- ================= FUTURE ================= -->
+
+<section>
+<h1 class="title">Future Dreams</h1>
+<p>Ujjain Trip ✨</p>
+<p>Ladakh Together 🏔</p>
+<p>2026: Just stay together.</p>
+<p>Promise: Hamesha khush rakhuga.</p>
+</section>
+
+<!-- ================= LETTER ================= -->
+
+<section>
+<h1 class="title">Dear Best Friend</h1>
+
+<p style="max-width:800px; line-height:1.8;">
+I still remember the day we started talking like normal strangers...
+You are not just my best friend… you are my forever person.
+</p>
+
+<div class="secret-btn" onclick="revealSecret()">Click if you really love me 😏</div>
+<p id="secretMessage" style="display:none; margin-top:20px;">
+Even if you call me bandar… I will always choose you. 🖤
+</p>
+
+</section>
+
+<script>
+
+/* MUSIC BUTTON */
+document.getElementById("musicBtn").addEventListener("click",function(){
+document.getElementById("bgMusic").play();
+this.style.display="none";
+});
+
+/* LOVE COUNTER */
+const startDate = new Date("August 27, 2025 13:20:00").getTime();
+setInterval(()=>{
+const now = new Date().getTime();
+const distance = now - startDate;
+const days = Math.floor(distance/(1000*60*60*24));
+document.getElementById("loveCounter").innerHTML="Days since we met: "+days+" ❤️";
+},1000);
+
+/* SECRET */
+function revealSecret(){
+document.getElementById("secretMessage").style.display="block";
+}
+
+/* FLOATING PETALS */
+setInterval(()=>{
+const petal=document.createElement("div");
+petal.classList.add("petal");
+petal.style.left=Math.random()*window.innerWidth+"px";
+petal.style.animationDuration=5+Math.random()*5+"s";
+document.body.appendChild(petal);
+setTimeout(()=>petal.remove(),10000);
+},500);
+
+</script>
+
+</body>
+</html>
