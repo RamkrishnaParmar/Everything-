@@ -8,16 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 /* ---------------- GLOBAL ---------------- */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
 }
-
 body{
 font-family:'Poppins',sans-serif;
 background:black;
@@ -25,6 +22,7 @@ color:white;
 overflow-x:hidden;
 }
 
+/* ---------------- SECTIONS ---------------- */
 section{
 min-height:100vh;
 display:flex;
@@ -34,12 +32,11 @@ align-items:center;
 padding:50px 20px;
 text-align:center;
 position: relative;
-transition: background 5s ease;
-background: linear-gradient(120deg, #ffafbd, #ffc3a0);
+background: linear-gradient(120deg, #ffecd2, #fcb69f); /* initial gradient */
+transition: background 7s ease; /* smooth background */
 }
 
 /* ---------------- HERO ---------------- */
-
 .hero h1{
 font-family:'Great Vibes',cursive;
 font-size:70px;
@@ -48,13 +45,13 @@ color:black; /* Main heading black */
 
 .hero h2{
 margin-top:10px;
+font-family:'Great Vibes',cursive;
 font-weight:300;
-color:#ff6f61; /* soft red/orange */
+color:#ffa07a; /* soft light orange */
 transition: color 5s ease;
 }
 
 /* ---------------- MUSIC BUTTON ---------------- */
-
 #musicBtn{
 margin-top:30px;
 padding:12px 25px;
@@ -65,43 +62,37 @@ color:black;
 cursor:pointer;
 transition:0.3s;
 }
-
 #musicBtn:hover{
 transform:scale(1.1);
 }
 
 /* ---------------- TITLES ---------------- */
-
 .title{
 font-family:'Great Vibes',cursive;
 font-size:55px;
 margin-bottom:20px;
-color:black; /* Main heading black */
+color:black; /* main heading black */
 transition: color 5s ease;
 }
 
-/* ---------------- IMAGE STYLE ---------------- */
-
+/* ---------------- IMAGE ---------------- */
 img{
 width:280px;
 border-radius:20px;
 margin:20px;
 transition:0.5s;
 }
-
 img:hover{
 transform:scale(1.05);
 }
 
 /* ---------------- LOVE COUNTER ---------------- */
-
 .counter{
 margin-top:20px;
 color:#aaa;
 }
 
 /* ---------------- SECRET ---------------- */
-
 .secret-btn{
 margin-top:40px;
 padding:10px 20px;
@@ -109,14 +100,12 @@ border:1px solid white;
 border-radius:25px;
 cursor:pointer;
 }
-
 .secret-btn:hover{
 background:white;
 color:black;
 }
 
-/* ---------------- FLOATING ROSE ---------------- */
-
+/* ---------------- FLOATING PETALS ---------------- */
 .petal{
 position:fixed;
 width:15px;
@@ -126,34 +115,30 @@ opacity:0.2;
 border-radius:50%;
 animation:fall linear infinite;
 }
-
 @keyframes fall{
 from{transform:translateY(-100px);}
 to{transform:translateY(100vh);}
 }
 
-/* ---------------- PARAGRAPH FONT & COLOR ---------------- */
-
+/* ---------------- PARAGRAPHS ---------------- */
 section p{
-font-family: 'Poppins', sans-serif; 
-font-weight: 300;
-font-size: 20px;
-color: #ff6f61; /* soft red/orange */
+font-family:'Great Vibes',cursive; /* cursive text */
+font-weight:300;
+font-size:20px;
+color:#ffa07a; /* soft light orange */
 transition: color 5s ease;
-max-width: 800px;
-margin: 10px auto;
+max-width:800px;
+margin:10px auto;
 }
 
 section h1, section h2, .title{
 transition: color 5s ease;
 }
-
 </style>
 </head>
 <body>
 
 <!-- ================= MUSIC SECTION ================= -->
-
 <audio id="bgMusic" loop>
 <source src="music/appa-fer-milage.mp3" type="audio/mp3">
 </audio>
@@ -161,89 +146,97 @@ transition: color 5s ease;
 <section class="hero">
 <h1>Janvi Parmar</h1>
 <h2>My Optimus 🖤 My Chipkali</h2>
-<button id="musicBtn">Play Our Song 🎵</button>
+<button id="musicBtn">Make This Moment Best🎵</button>
 <div class="counter" id="loveCounter"></div>
 </section>
 
 <!-- ================= OUR BEGINNING ================= -->
-
 <section>
 <h1 class="title">Our Beginning</h1>
-
 <p><b>27 Aug 2025 – 1:20 PM</b><br>R.K Cafe. Silent girl. No first words. But everything started.</p>
-
 <img src="images/01-first-meet.jpg">
-
-<p><b>25 Jan 2026 – 5:28 PM</b><br>First Selfie Together.</p>
-
+<p><b>25 Jan 2026 – 5:28 PM</b><br>First Selfie Together a deep calm 💌.</p>
 <img src="images/02-first-selfie.jpg">
-
 </section>
 
 <!-- ================= MEMORIES ================= -->
-
 <section>
 <h1 class="title">Beautiful Memories</h1>
-
 <p><b>10 Jan 2026 – 4:44 PM</b><br>Pani Puri moment.</p>
-
 <img src="images/03-pani-puri.jpg">
-
 <p><b>10 Jan 2026 – 8:43 PM</b><br>Best Call Ever.</p>
-
 <img src="images/04-call-memory.jpg">
-
 <p><b>25 Jan 2026 – Monty Cafe</b></p>
-
 <img src="images/05-monty-cafe.jpg">
-
 <p><b>20 Feb 2026 – Teliya Hanuman Mandir</b></p>
-
 <img src="images/06-mandir.jpg">
-
 </section>
 
 <!-- ================= PRESENT ================= -->
-
 <section>
 <h1 class="title">Present</h1>
-<p>Currently: Best Friends (from her side 🌚)</p>
-<p>But for me… She is my everything.</p>
+<p> You are my Bestfriend 
+<p>for me… you are my everything.
 <p>Daily talks. Daily smiles. Daily peace.</p>
-
 <img src="images/07-emotional.jpg">
-
 </section>
 
 <!-- ================= FUTURE ================= -->
-
 <section>
 <h1 class="title">Future Dreams</h1>
 <p>Ujjain Trip ✨</p>
 <p>Ladakh Together 🏔</p>
-<p>2026: Just stay together.</p>
+<p>2026: hamesha Just stay together.</p>
 <p>Promise: Hamesha khush rakhuga.</p>
 </section>
 
 <!-- ================= LETTER ================= -->
-
 <section>
 <h1 class="title">Dear Best Friend</h1>
-
 <p style="max-width:800px; line-height:1.8;">
-I still remember the day we started talking like normal strangers...
-You are not just my best friend… you are my forever person.
+Dear Best Friend 🥰,</p>
 </p>
-
-<div class="secret-btn" onclick="revealSecret()">Click if you really love me 😏</div>
+I still remember the day we started talking like normal strangers😄,
+ never knowing that one day you would become my whole comfort place.
+Today, you are not just my friend, you are
+  my safe space, my peace, my happiness in human form💗.</p>
+</p>
+Whenever life feels heavy and my heart feels tired
+  you are the first person I think of
+  Not because you solve all my problems, but because
+  you make them feel lighter just by see you there🥹.</p>
+</p>
+I know I irritate you sometimes,
+  I tease you without reason,
+  I act childish, I get angry,
+  but deep inside I know 
+  our bond is stronger than these small fights🥺.</p>
+</p>
+With you, I don't have to pretend.
+I don't have to hide my tears.
+I don't have to fake a smile.
+and that is the most beautiful feeling in this world🤩.</p>
+</p>
+I don't want a thousand friends,
+ I don't want a big circle,
+I just want one person who stays and that person is you🫠.</p>
+</p>
+No matter where life takes us,
+no matter how busy we become promise me we will always
+find our way back to this pure, honest friendship✨.</p>
+</p>
+Because having you in my life is one of the biggest blessings
+  I will forever be thankful for💫
+You are not just my best friend😻...
+  you are my forever person🤍 </p>
+</p>
+<div class="secret-btn" onclick="revealSecret()">Click if you really love me 🙂</div>
 <p id="secretMessage" style="display:none; margin-top:20px;">
-Even if you call me bandar… I will always choose you. 🖤
+Even if you call me bandar… I will always choose you 😘. 🖤
 </p>
-
 </section>
 
 <script>
-
 /* MUSIC BUTTON */
 document.getElementById("musicBtn").addEventListener("click",function(){
 document.getElementById("bgMusic").play();
@@ -274,38 +267,27 @@ document.body.appendChild(petal);
 setTimeout(()=>petal.remove(),10000);
 },500);
 
-/* ---------------- SMOOTH BACKGROUND & TEXT COLOR CHANGE ---------------- */
+/* ---------------- SMOOTH BACKGROUND ---------------- */
 const sections = document.querySelectorAll("section");
 const gradients = [
-  {bg:"linear-gradient(120deg, #ffafbd, #ffc3a0)", text:"#ff6f61"},
-  {bg:"linear-gradient(120deg, #a18cd1, #fbc2eb)", text:"#ffa07a"},
-  {bg:"linear-gradient(120deg, #fbc2eb, #fad0c4)", text:"#ff6347"},
-  {bg:"linear-gradient(120deg, #ffecd2, #fcb69f)", text:"#ff7f50"},
-  {bg:"linear-gradient(120deg, #f6d365, #fda085)", text:"#ff4500"}
+{bg:"linear-gradient(120deg, #ffecd2, #fcb69f)", text:"#ffa07a"},
+{bg:"linear-gradient(120deg, #ffe5d4, #ffc2a3)", text:"#ffb347"},
+{bg:"linear-gradient(120deg, #ffd6c0, #ffa07a)", text:"#ff8c69"},
+{bg:"linear-gradient(120deg, #ffe0b2, #ffab73)", text:"#ffa500"},
+{bg:"linear-gradient(120deg, #ffdab9, #ff7f50)", text:"#ff8040"}
 ];
 
 let idx = 0;
-
 setInterval(()=>{
-  idx = (idx+1) % sections.length;
-  const sec = sections[idx];
-  const grad = gradients[Math.floor(Math.random()*gradients.length)];
-
-  sec.style.transition = "background 5s ease";
-  sec.style.background = grad.bg;
-
-  const ps = sec.querySelectorAll("p");
-  ps.forEach(p=>{
-    p.style.color = grad.text;
-  });
-
-  const hs = sec.querySelectorAll("h1,h2,.title");
-  hs.forEach(h=>{
-    h.style.color = "black"; // Main headings always black
-  });
-
-}, 7000);
-
+idx = (idx+1) % sections.length;
+const sec = sections[idx];
+const grad = gradients[Math.floor(Math.random()*gradients.length)];
+sec.style.background = grad.bg;
+const ps = sec.querySelectorAll("p");
+ps.forEach(p=>{ p.style.color = grad.text; });
+const hs = sec.querySelectorAll("h1,h2,.title");
+hs.forEach(h=>{ h.style.color = "black"; });
+},7000);
 </script>
 
 </body>
